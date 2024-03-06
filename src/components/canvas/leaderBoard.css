@@ -1,0 +1,9 @@
+.leaderboard {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    padding: 7px 1px;
+    border-radius: 1px;
+    color: white;
+}
