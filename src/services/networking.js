@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 import { processGameUpdate } from './state.js';
-const socket = io('http://5.35.89.173', { 'path': '/api/websocket' });
+const socket = io('http://5.35.89.173:5000', { 'path': '/api/websocket' });
 const JOIN_GAME = 'JOIN_GAME';
 const GAME_UPDATE = 'GAME_UPDATE';
 const INPUT = 'INPUT'
