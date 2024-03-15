@@ -1,12 +1,13 @@
 import { io } from 'socket.io-client';
 import { processGameUpdate } from './state.js';
-const socket = io('http://localhost', { 'path': '/api/websocket' });
+const socket = io('http://5.35.89.173', { 'path': '/api/websocket' });
 const JOIN_GAME = 'JOIN_GAME';
 const GAME_UPDATE = 'GAME_UPDATE';
 const INPUT = 'INPUT'
 const INPUT_KEY = 'INPUT_KEY'
 const SHOOT_KEY = 'SHOOT_KEY'
 const GAME_OVER = 'GAME_OVER'
+const SPACE_KEY = 'SPACE_KEY'
 
 const connectedPromise = new Promise(resolve => {
     socket.on('connect', () => {
@@ -46,5 +47,10 @@ export const updateMove = dir => {
 
 export const ShootDirection = dir => {
     socket.emit(SHOOT_KEY, dir);
+
+};
+
+export const SetProtected =() =>{
+    socket.emit(SPACE_KEY);
 
 };

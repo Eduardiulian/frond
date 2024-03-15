@@ -113,8 +113,10 @@ function renderPlayer(player) {
     context.closePath();
     //
     if (player.protected) {
-        context.shadowColor = 'hsla(183, 100%, 47%, 1)';
-        context.shadowBlur = 100;
+        context.shadowColor = "hsla(331, 100%, 52%, 1)";
+        context.shadowBlur = 35;
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 0;
     }
     context.strokeStyle = 'black';;
     context.lineWidth = 4;
@@ -156,6 +158,12 @@ function renderPlayers(me, player) {
     context.moveTo(player.coordinates[0].x, player.coordinates[0].y);
     for (let i = 1; i < player.coordinates.length; i++) {
         context.lineTo(player.coordinates[i].x, player.coordinates[i].y);
+    }
+    if (player.protected) {
+        context.shadowColor = "hsla(331, 100%, 52%, 1)";
+        context.shadowBlur = 35;
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 0;
     }
 
     context.closePath();

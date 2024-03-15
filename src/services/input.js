@@ -1,4 +1,4 @@
-import { updateDirection, updateMove, ShootDirection } from './networking.js';
+import { updateDirection, updateMove, ShootDirection, SetProtected } from './networking.js';
 
 
 const inputs = {
@@ -21,8 +21,13 @@ let keys = {
     'ArrowDown': false,
 }
 function onkeydownInput(e) {
-    keys[e.key] = true
-    keydownHandler(e)
+    if (e.code === "Space") {
+        SetProtected()
+    }
+    else {
+        keys[e.key] = true
+        keydownHandler(e)
+    }
 
 }
 
